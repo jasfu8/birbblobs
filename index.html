@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticker Payment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .payment-method {
+      margin-top: 30px;
+    }
+    .payment-method h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .payment-method .payment-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .payment-method .payment-button img {
+      width: 150px;
+      height: auto;
+      margin-right: 10px;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+    input[type="image"] {
+      display: block;
+      margin: 20px auto;
+    }
+    /* New CSS */
+    .payment-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container payment-method">
+    <h2>Pay with PayPal</h2>
+    <center><p>Supports Apple Pay and Credit Cards</p></center>
+    <!-- New Payment Container -->
+    <div class="payment-container">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="S8RWQ522KEB2A" />
+        <table>
+          <tr>
+            <td>
+              <label for="quantity"></label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <select name="os0" id="quantity">
+                <option value="1 Sticker">1 Sticker $4.00 USD</option>
+                <option value="3 Stickers">3 Stickers $10.00 USD</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" src="https://lavendercottagecattery.co.uk/wp-content/uploads/2022/10/CITYPNG.COMDownload-PayPal-Yellow-Payment-Button-PNG-2100x770-2.png" width="200px" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+      </form>
+    </div>
+  </div>
+
+  <!-- Container for Venmo Payment -->
+  <div class="container payment-method">
+    <h2>Pay with Venmo</h2>
+    
+    <div class="payment-button">
+      <a href="https://venmo.com/code?user_id=3969677537576424287&created=1712542673.725642&printed=1" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Venmo_logo.png" alt="Venmo">
+      </a>
+    </div>
+  </div>
+<div class="container payment-method">
+    <h2>Can't pay now?</h2>
+    <center><p>Buy later from Etsy, and we'll ship the stickers to you.</p></center>
+    <div class="payment-button">
+      <a href="https://www.etsy.com/listing/1679147424/parody-art-pickleball-sticker-durable" target="_blank">
+        <img src="https://freelogopng.com/images/all_img/1659110030etsy-icon-png.png" alt="Etsy">
+      </a>
+    </div>
+  </div>
+</body>
+</html>
